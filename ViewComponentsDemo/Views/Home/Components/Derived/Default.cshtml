@@ -1,0 +1,18 @@
+﻿
+
+@model CountryViewModel
+
+<table class="table table-sm table-bordered">
+    <tr>
+        <td>Countries:</td>
+        <td>
+            @Model.Countries
+        </td>
+    </tr>
+    <tr>
+        <td>Population:</td>
+        <td>
+            @Model.Population.ToString("#,###")
+        </td>
+    </tr>
+</table>

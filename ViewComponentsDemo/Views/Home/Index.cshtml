@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewData["Title"] = "Customer";
+    Layout = "_Layout";
+}
+
+<div class="col-12 bg-primary">
+    <div class="row text-white pl-1">
+        @await Component.InvokeAsync("Poco")
+    </div>
+</div>
+<div class="col-12 bg-success">
+    <div class="row text-white pl-1">
+        @await Component.InvokeAsync("Derived", new { useParameter = true })
+    </div>
+</div>
+<div class="col-12 bg-danger">
+    <div class="row text-white pl-1">
+        @await Component.InvokeAsync("ReturningHtml")
+    </div>
+</div>
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Name</td>
+            <td>@product.Age</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<div class="col-12 bg-warning">
+    <div class="row text-white pl-1">
+        @await Component.InvokeAsync("Async")
+    </div>
+</div>
+<a asp-action="Create" class="btn btn-primary">Create</a>
