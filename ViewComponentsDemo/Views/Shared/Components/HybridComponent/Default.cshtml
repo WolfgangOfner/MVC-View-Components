@@ -1,0 +1,17 @@
+﻿    
+    @model IEnumerable<Country>
+
+    <table class="table table-sm table-bordered">
+        <tr>
+            <td>Biggest Country:</td>
+            <td>
+                @Model.OrderByDescending(c => c.Population).First().Name
+            </td>
+        </tr>
+    </table>
+    <a class="btn btn-sm btn-info" asp-controller="Country" asp-action="Create">
+        Create Country
+    </a>
+
+
+

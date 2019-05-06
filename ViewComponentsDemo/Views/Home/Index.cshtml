@@ -22,19 +22,19 @@
 </div>
 <table class="table table-sm table-striped table-bordered">
     <thead>
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-    </tr>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var product in Model)
-    {
-        <tr>
-            <td>@product.Name</td>
-            <td>@product.Age</td>
-        </tr>
-    }
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Age</td>
+            </tr>
+        }
     </tbody>
 </table>
 <div class="col-12 bg-warning">
@@ -42,4 +42,15 @@
         @await Component.InvokeAsync("Async")
     </div>
 </div>
+<br />
+
+<div class="bg-primary m-1 p-1">
+    <div class="row text-white">
+        <div class="col-7"><h1>Countries</h1></div>
+        <div class="col-5">
+            @await Component.InvokeAsync("HybridComponent")
+        </div>
+    </div>
+</div>
+
 <a asp-action="Create" class="btn btn-primary">Create</a>
